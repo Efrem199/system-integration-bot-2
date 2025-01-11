@@ -9,7 +9,7 @@ from bot_func_abc import AtomicBotFunctionABC
 
 
 class AtomicExampleBotFunction(AtomicBotFunctionABC):
-    """Модуль для получения цитат из сериала Breaking Bad через Telegram бота."""
+    """Модуль для получения цитат из сериала Breaking Bad через Telegram бота!"""
 
     commands: List[str] = ["quote"]
     authors: List[str] = ["Efrem199"]
