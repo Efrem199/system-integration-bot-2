@@ -1,43 +1,58 @@
-# [@sstmintgrtn_bot](https://t.me/sstmintgrtn_bot)
+### [@sstmintgrtn_bot](https://t.me/sstmintgrtn_bot)
+
 ![@sstmintgrtn_bot](https://www.gravatar.com/avatar/7ceee8792cfff9591510a6fe04131afa?size=200&default=robohash&forcedefault=y)
 
-The Telegram bot is designed to master the practical skills of integrating information systems and gain experience in working together on a project in a distributed team.
+Телеграм-бот создан для освоения практических навыков интеграции информационных систем и приобретения опыта совместной работы над проектом в распределённой команде.
 
-The bot combines various authoring functions written by students in the process of studying the discipline "system integration of software applications".
-Each of the functions must implement interaction with an external information system.
+Бот объединяет различные функции, разработанные студентами в процессе изучения дисциплины "Системная интеграция программных приложений".  
+Каждая из функций должна обеспечивать взаимодействие с внешней информационной системой.
 
+__Тестовый Телеграм-бот__ — [@sstmintgrtn_bot](https://t.me/sstmintgrtn_bot).  
 
-__Test telegram bot__ - [@sstmintgrtn_bot](https://t.me/sstmintgrtn_bot). 
+__Общая группа с ботом__ — [sstmintgrtn](https://t.me/sstmintgrtn). При пуше изменений в любую ветку результаты тестов будут также публиковаться в этой группе.
 
-__Shared group with a bot__ - [sstmintgrtn](https://t.me/sstmintgrtn). When pushed to any branch, test results will also appear in that group.
+---
 
-To run locally, add an `.env` file with your keys to the root of the project. Or add appropriate values to the environment variables of your operating system.
-```
+### Локальный запуск
+Для запуска проекта локально добавьте файл `.env` с ключами в корень проекта или задайте соответствующие значения в переменных окружения вашей операционной системы.
+
+Пример содержимого файла `.env`:  
+```env
 LOGLEVEL=ERROR
 TBOT_LOGLEVEL=ERROR
 CONECTION_PGDB=
 TBOTTOKEN=
 
 EXAMPLETOKEN=1234567890
-
 ```
 
-## Tokens
-Links to information about tokens
+---
 
-[GITHUBTOKEN](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+### Токены
+Ссылки на информацию о создании токенов:  
 
+- [GITHUBTOKEN](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
-## Adding telegram bot functions.
-Dear students, when implementing your functions, adhere to the following recommendations.
-Your code should be placed in a separate file in the **src/functions/atomic** directory.
-The code must be organized in a class that inherits from the abstract class **AtomicBotFunctionABC**
- - commands: List[str] - list of commands to call your function
- - authors: List[str] - your login on github.com
- - about: str - short description
- - description: str - a detailed description of the function with a description of the parameters if they are needed
- - state: bool - state whether the function is enabled or disabled
+---
 
-For an example, take a look at the file **[example_bot_function.py](https://github.com/IHVH/system-integration-bot-2/blob/master/src/functions/atomic/example_bot_function.py)**
+### Добавление функций в Телеграм-бота
 
-Explore the capabilities of the library that is used in the project [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI).
+Уважаемые студенты, при разработке функций для бота придерживайтесь следующих рекомендаций:  
+1. Код функции должен быть размещён в отдельном файле в директории **src/functions/atomic**.  
+2. Каждая функция должна быть оформлена в виде класса, который наследует абстрактный класс **AtomicBotFunctionABC**.  
+
+Необходимые атрибуты класса:  
+- `commands: List[str]` — список команд, которые вызывают вашу функцию.  
+- `authors: List[str]` — ваши логины на github.com.  
+- `about: str` — краткое описание функции.  
+- `description: str` — подробное описание функции с параметрами (если они требуются).  
+- `state: bool` — статус функции (включена или отключена).  
+
+Пример можно найти в файле **[example_bot_function.py](https://github.com/IHVH/system-integration-bot-2/blob/master/src/functions/atomic/example_bot_function.py)**.  
+
+---
+
+### Используемая библиотека
+Изучите возможности библиотеки, используемой в проекте:  
+[pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI).  
+```
